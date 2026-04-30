@@ -1,9 +1,0 @@
-{
-  // Cloudflare Workers — Static Assets config
-  // Deploy: npx wrangler versions upload
-  "name": "toml-website-v2",
-  "compatibility_date": "2026-04-30",
-  "assets": {
-    "directory": "./"
-  }
-}
