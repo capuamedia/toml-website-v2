@@ -1,6 +1,6 @@
 {
   // Cloudflare Workers — Static Assets config
-  // Deploy: npx wrangler deploy
+  // Deploy: npx wrangler versions upload
   "name": "thousand-oaks-meat-locker",
   "compatibility_date": "2026-04-30",
   "assets": {
