@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Barlow+Condensed:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -308,7 +309,10 @@
       <div class="form-card">
         <h2 class="form-card-title">Request a Catering Quote</h2>
         <p class="form-card-sub">Fill out the form below and we'll get back to you within 24 hours. Or contact Robin directly at <a href="mailto:robin@tomeatlocker.com">robin@tomeatlocker.com</a> or <a href="tel:+18054953211">(805) 495-3211</a>.</p>
-        <form action="#" method="POST" novalidate>
+        <div id="form-success" style="display:none; background:var(--accent); color:#fff; padding:18px 24px; border-radius:6px; margin-bottom:24px; font-family:var(--ff-head); letter-spacing:0.05em; text-align:center;">
+          Request sent! Robin will be in touch within 24 hours.
+        </div>
+        <form id="catering-request-form" action="#" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="first-name">First Name *</label>
@@ -436,5 +440,40 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    emailjs.init('krODrAL6s2eEjKYu_');
+
+    document.getElementById('catering-request-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('button[type="submit"]');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      const params = {
+        first_name: this.elements['first_name'].value,
+        last_name:  this.elements['last_name'].value,
+        email:      this.elements['email'].value,
+        phone:      this.elements['phone'].value,
+        event_date: this.elements['event_date'].value,
+        guest_count:this.elements['guest_count'].value,
+        event_type: this.elements['event_type'].value,
+        package:    this.elements['package'].value,
+        message:    this.elements['message'].value
+      };
+
+      emailjs.send('service_7a43p6e', 'template_i6b8nvi', params)
+        .then(() => {
+          document.getElementById('form-success').style.display = 'block';
+          this.reset();
+          btn.textContent = 'Submit Catering Request';
+          btn.disabled = false;
+          this.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, () => {
+          alert('Something went wrong. Please call us at (805) 495-3211 or email robin@tomeatlocker.com.');
+          btn.textContent = 'Submit Catering Request';
+          btn.disabled = false;
+        });
+    });
+  </script>
 </body>
 </html>
