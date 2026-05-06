@@ -343,6 +343,16 @@
               <input class="form-control" type="date" id="event-date" name="event_date" required />
             </div>
             <div class="form-group">
+              <label class="form-label" for="serve-time">Serve Time *</label>
+              <input class="form-control" type="time" id="serve-time" name="serve_time" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="event-address">Event Address *</label>
+            <input class="form-control" type="text" id="event-address" name="event_address" required placeholder="123 Main St, Thousand Oaks, CA 91360" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
               <label class="form-label" for="guest-count">Number of Guests *</label>
               <select class="form-control" id="guest-count" name="guest_count" required>
                 <option value="">Select...</option>
@@ -458,8 +468,10 @@
         last_name:  this.elements['last_name'].value,
         email:      this.elements['email'].value,
         phone:      this.elements['phone'].value,
-        event_date: this.elements['event_date'].value,
-        guest_count:this.elements['guest_count'].value,
+        event_date:    this.elements['event_date'].value,
+        serve_time:    this.elements['serve_time'].value,
+        event_address: this.elements['event_address'].value,
+        guest_count:   this.elements['guest_count'].value,
         event_type: this.elements['event_type'].value,
         package:    this.elements['package'].value,
         message:    this.elements['message'].value
