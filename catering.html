@@ -347,9 +347,15 @@
               <input class="form-control" type="time" id="serve-time" name="serve_time" required />
             </div>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="event-address">Event Address *</label>
-            <input class="form-control" type="text" id="event-address" name="event_address" required placeholder="123 Main St, Thousand Oaks, CA 91360" />
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="event-address">Event Address *</label>
+              <input class="form-control" type="text" id="event-address" name="event_address" required placeholder="123 Main St" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="city">City *</label>
+              <input class="form-control" type="text" id="city" name="city" required placeholder="Thousand Oaks" />
+            </div>
           </div>
           <div class="form-row">
             <div class="form-group">
@@ -471,6 +477,7 @@
         event_date:    this.elements['event_date'].value,
         serve_time:    this.elements['serve_time'].value,
         event_address: this.elements['event_address'].value,
+        city:          this.elements['city'].value,
         guest_count:   this.elements['guest_count'].value,
         event_type: this.elements['event_type'].value,
         package:    this.elements['package'].value,
