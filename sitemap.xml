@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage — highest priority, changes with specials/hours -->
+  <url>
+    <loc>https://www.thousandoaksmeatlocker.com/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Menu — high priority, Google surfaces this for food searches -->
+  <url>
+    <loc>https://www.thousandoaksmeatlocker.com/menu.html</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Catering — strong local intent, high conversion page -->
+  <url>
+    <loc>https://www.thousandoaksmeatlocker.com/catering.html</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- About — trust/credibility signal, since 1957 story -->
+  <url>
+    <loc>https://www.thousandoaksmeatlocker.com/about.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Contact — hours, location, phone -->
+  <url>
+    <loc>https://www.thousandoaksmeatlocker.com/contact.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
