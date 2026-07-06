@@ -360,14 +360,7 @@
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="guest-count">Number of Guests *</label>
-              <select class="form-control" id="guest-count" name="guest_count" required>
-                <option value="">Select...</option>
-                <option>60&ndash;75</option>
-                <option>75&ndash;100</option>
-                <option>100&ndash;150</option>
-                <option>150&ndash;200</option>
-                <option>200+</option>
-              </select>
+              <input class="form-control" type="number" id="guest-count" name="guest_count" min="60" placeholder="e.g. 80" required>
             </div>
           </div>
           <div class="form-group">
