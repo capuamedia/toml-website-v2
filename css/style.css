@@ -1420,25 +1420,38 @@ a.info-item:hover .info-value { color: var(--accent); }
   display: block; font-family: var(--ff-caps); font-size: 10px; letter-spacing: 0.15em;
   text-transform: uppercase; color: rgba(242,232,213,0.3); font-weight: 400; margin-top: 4px;
 }
-/* Notes card — sits in the package grid alongside the package cards */
+/* Accessories box — floats inside the last package-grid slot, deliberately
+   styled as a secondary annotation rather than a sixth package card. */
 .pkg-note-card {
-  background: var(--dark-card); border: 1px solid rgba(242,232,213,0.08);
-  border-left: 4px solid var(--accent);
-  display: flex; flex-direction: column; justify-content: center; gap: 30px;
-  padding: 40px 28px;
+  align-self: center;
+  margin-left: 30px;
+  background: rgba(242,232,213,0.025);
+  border: 1px dashed rgba(242,232,213,0.22);
+  display: flex; flex-direction: column; gap: 24px;
+  padding: 30px 26px;
+}
+.pkg-note-eyebrow {
+  font-family: var(--ff-caps); font-size: 10px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--accent); text-align: center;
+  padding-bottom: 18px; border-bottom: 1px solid rgba(242,232,213,0.12);
 }
 .pkg-note-block { text-align: center; }
-.pkg-note-icon { font-size: 20px; color: var(--accent); margin-bottom: 12px; }
+.pkg-note-icon { font-size: 18px; color: rgba(242,232,213,0.6); margin-bottom: 10px; }
 .pkg-note-title {
-  font-family: var(--ff-head); font-weight: 700; font-size: 18px;
-  text-transform: uppercase; color: var(--parchment); margin-bottom: 10px;
+  font-family: var(--ff-head); font-weight: 700; font-size: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--parchment); margin-bottom: 8px;
 }
 .pkg-note-body {
-  font-family: var(--ff-body); font-size: 15px; line-height: 1.7;
-  color: rgba(242,232,213,0.6);
+  font-family: var(--ff-body); font-size: 14px; line-height: 1.65;
+  color: rgba(242,232,213,0.55);
 }
-.pkg-note-price { color: var(--accent); font-weight: 700; white-space: nowrap; }
-.pkg-note-rule { height: 1px; background: rgba(242,232,213,0.08); }
+.pkg-note-tag {
+  font-family: var(--ff-caps); font-size: 10px; letter-spacing: 0.15em;
+  text-transform: uppercase; color: rgba(242,232,213,0.35); margin-top: 10px;
+}
+.pkg-note-price { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.pkg-note-rule { height: 1px; background: rgba(242,232,213,0.1); }
 .pkg-fineprint {
   margin-top: 32px; text-align: center;
   font-family: var(--ff-caps); font-size: 11px; letter-spacing: 0.08em;
@@ -1656,6 +1669,7 @@ a.contact-detail-value:hover { color: var(--parchment); }
 @media (max-width: 1024px) {
   .occasion-grid { grid-template-columns: 1fr 1fr; }
   .package-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+  .pkg-note-card { margin-left: 0; align-self: stretch; }
   .process-steps { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
   .values-grid { grid-template-columns: 1fr; }
   .story-split { grid-template-columns: 1fr; gap: 60px; }
